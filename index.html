@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Histopathology: Patch-Based Deep Learning Pipeline</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Inter", Arial, sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* NHS Blue Header */
+        header {
+            background-color: #005EB8;
+            color: white;
+            padding: 1.8rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .section {
+            padding: 2rem 1.3rem;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #005EB8;
+            margin-bottom: 0.7rem;
+            font-size: 1.3rem;
+            border-left: 4px solid #005EB8;
+            padding-left: 0.6rem;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            margin-top: 0.8rem;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #e5e5e5;
+            margin: 2rem 0;
+        }
+
+        .image-box {
+            width: 100%;
+            border: 1px solid #e5e5e5;
+            border-radius: 6px;
+            padding: 0.9rem;
+            margin-bottom: 1.8rem;
+            background: #fafafa;
+            text-align: center;
+        }
+
+        .image-box img {
+            width: 100%;
+            border-radius: 4px;
+        }
+
+        a.button {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.7rem 1.2rem;
+            background-color: #005EB8;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #f5f5f5;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Breast Cancer Histopathology: Patch-Based Deep Learning Pipeline</h1>
+    </header>
+
+    <section class="section">
+        <h2>Overview</h2>
+        <p>
+            This project presents a clean and reproducible deep learning pipeline for breast cancer tumour 
+            grade classification using digital histopathology images from the TCGA-BRCA dataset. 
+            The workflow applies patch-based convolutional neural networks (CNNs), slide-aware validation, 
+            and interpretability techniques to support transparent and auditable model evaluation.
+        </p>
+
+        <p>
+            The pipeline compares <strong>ResNet-34</strong> and <strong>EfficientNet-B0</strong> backbones using a 
+            strict leave-one-slide-out (LOSO) cross-validation strategy to avoid data leakage and 
+            over-optimistic performance estimates. Grad-CAM visualisations are included to highlight model 
+            attention within tumour-rich regions.
+        </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section">
+        <h2>Pipeline Summary</h2>
+        <ul>
+            <li>Whole-slide image (WSI) processing and patch extraction</li>
+            <li>Weak slide-level labels based on Nottingham grading</li>
+            <li>Balanced index generation and LOSO evaluation</li>
+            <li>Training of ResNet-34 and EfficientNet-B0 backbones</li>
+            <li>Grad-CAM heatmaps for spatial interpretability</li>
+            <li>Fully reproducible environment with fixed seeds</li>
+        </ul>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section">
+        <h2>Example Visual Outputs</h2>
+
+        <div class="image-box">  
+            <p><em>Grad-CAM visualisation highlighting tumour-rich regions attended to by the model.</em></p>
+            <img src="https://raw.githubusercontent.com/sagalkhalid25/breast-cancer-cnn-grading/refs/heads/main/IMG_0338.png" alt="Grad-CAM visualisation">
+        </div>
+
+        <div class="image-box">  
+            <p><em>Training and validation metrics across the 5-slide leave-one-slide-out (LOSO) evaluation.</em></p>
+            <img src="https://raw.githubusercontent.com/sagalkhalid25/breast-cancer-cnn-grading/refs/heads/main/IMG_0337.png" alt="Training curves">
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section">
+        <h2>Repository & Code</h2>
+        <p>
+            The full reproducible codebase, including dataset index files, training scripts, and 
+            analysis notebooks, is available via the University of Birmingham GitLab:
+        </p>
+
+        <a class="button" href="https://git.cs.bham.ac.uk/projects-2024-25/sxb1545" target="_blank">View GitLab Project</a>
+    </section>
+
+    <footer>
+        © 2025 Sagal Khalid — Digital Pathology & AI
+    </footer>
+
+</body>
+</html>
